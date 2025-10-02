@@ -45,7 +45,7 @@ public class PE02_CastellonAlbert {
         System.out.println("3. Daga per 20 or (D)");
         System.out.println("Quina arma vols comprar? (LS/SS/D)");
         
-        weaponCode = escaner.next();
+        weaponCode = escaner.next().toUpperCase();
         switch (weaponCode) {
             case "LS":
                 if (or >= 40) {
@@ -96,7 +96,7 @@ public class PE02_CastellonAlbert {
             System.out.println("Tens una poció per curar-te si et fan mal.");
         }
         System.out.println("Surts del poble i t'endinses al bosc. Què vols explorar, el nord o l'est?");
-        direction = escaner.next();
+        direction = escaner.next().toLowerCase();
         if (!direction.equals("nord") && !direction.equals("est")) {
             System.out.println("T'has perdut i no saps tornar al poble. Acabes morint de gana.");
         } else if (direction.equals("nord")) {
