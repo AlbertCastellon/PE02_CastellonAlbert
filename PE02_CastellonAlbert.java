@@ -3,42 +3,42 @@ import java.util.Scanner;
 public class PE02_CastellonAlbert {
     public static void main(String[] args) {
         Scanner escaner = new Scanner(System.in);
-        int or = 50;
+        int gold = 50;
         String weapon, weaponCode, direction, spell;
         weapon = "res";
         weaponCode = "res";
         spell = "cap";
-        boolean mirarAltresParades, comprarPocio, potion, comprarPenjoll, necklace, knockDoor, alive;
+        boolean lookAround, buyPotion, potion, buyNecklace, necklace, knockDoor, alive;
         alive = true;
         necklace = false;
         potion = false;
         System.out.println("Vas al mercat a comprar una arma, has d'explorar el bosc i pot ser perillós així podràs protegir-te.");
-        System.out.println("Tens " + or + " or per gastar.");
+        System.out.println("Tens " + gold + " or per gastar.");
         System.out.println("Vols mirar altres parades del mercat? (true/false)");
-        mirarAltresParades = escaner.nextBoolean();
-        if (mirarAltresParades) {
+        lookAround = escaner.nextBoolean();
+        if (lookAround) {
             System.out.println("Pases per una parada que venen pocions per 10 or.");
             System.out.println("Vols comprar una poció? (true/false)");
-            comprarPocio = escaner.nextBoolean();
-            if (comprarPocio) {
-                or -= 10;
-                System.out.println("Has comprat una poció. Et queden " + or + " or.");
+            buyPotion = escaner.nextBoolean();
+            if (buyPotion) {
+                gold -= 10;
+                System.out.println("Has comprat una poció. Et queden " + gold + " or.");
                 potion = true;
             } else {
                 System.out.println("No has comprat res");
             }
             System.out.println("Veus un penjoll amb forma de lluna que et crida l'atenció.");
             System.out.println("Vols comprar el penjoll per 10 or? (true/false)");
-            comprarPenjoll = escaner.nextBoolean();
-            if (comprarPenjoll) {
-                or -= 10;
-                System.out.println("Has comprat el penjoll. Et queden " + or + " or.");
+            buyNecklace = escaner.nextBoolean();
+            if (buyNecklace) {
+                gold -= 10;
+                System.out.println("Has comprat el penjoll. Et queden " + gold + " or.");
                 necklace = true;
             } else {
                 System.out.println("No has comprat res");
             }
         }
-        System.out.println("Arribes a la parada d'armes. Tens " + or + " or per gastar.");
+        System.out.println("Arribes a la parada d'armes. Tens " + gold + " or per gastar.");
         System.out.println("Mires les armes disponibles.");
         System.out.println("1. Espasa llarga per 40 or (LS)");
         System.out.println("2. Espasa curta per 35 or (SS)");
@@ -48,20 +48,20 @@ public class PE02_CastellonAlbert {
         weaponCode = escaner.next().toUpperCase();
         switch (weaponCode) {
             case "LS":
-                if (or >= 40) {
-                    or -= 40;
+                if (gold >= 40) {
+                    gold -= 40;
                     weapon = "Espasa llarga";
-                    System.out.println("Has comprat una " + weapon + ". Et queden " + or + " or.");
+                    System.out.println("Has comprat una " + weapon + ". Et queden " + gold + " or.");
                 } else {
                     System.out.println("No tens prou or per comprar aquesta arma.");
                     weaponCode = "res";
                 }
                 break;
             case "SS":
-                if (or >= 35) {
-                    or -= 35;
+                if (gold >= 35) {
+                    gold -= 35;
                     weapon = "Espasa curta";
-                    System.out.println("Has comprat una " + weapon + ". Et queden " + or + " or.");
+                    System.out.println("Has comprat una " + weapon + ". Et queden " + gold + " or.");
                     if (necklace) {
                         System.out.println("El venedor et regala un escut.");
                         weapon = "Espasa curta i escut";
@@ -74,10 +74,10 @@ public class PE02_CastellonAlbert {
                 }
                 break;
             case "D":
-                if (or >= 20) {
-                    or -= 20;
+                if (gold >= 20) {
+                    gold -= 20;
                     weapon = "Daga";
-                    System.out.println("Has comprat una " + weapon + ". Et queden " + or + " or.");
+                    System.out.println("Has comprat una " + weapon + ". Et queden " + gold + " or.");
                     if (necklace) {
                         System.out.println("El venedor et regala una altra daga.");
                         weapon = "2 dagues";
