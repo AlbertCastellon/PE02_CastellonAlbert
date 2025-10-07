@@ -141,7 +141,7 @@ public class PE02_CastellonAlbert {
                 // Final del primer camí en cas de sobreviure
                 System.out.println("Explores la zona i tornes al poble sa i estalvi.");
             }
-        } else {
+        } else if (direction.equals("est")) {
             // Segon camí
             System.out.println("Explorant el bosc cap a l'est, trobes una cabana.");
             System.err.println("Vols entrar sense trucar? (true/false)");
